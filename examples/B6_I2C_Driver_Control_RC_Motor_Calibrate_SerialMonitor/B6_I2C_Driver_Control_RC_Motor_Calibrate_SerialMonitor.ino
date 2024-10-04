@@ -50,6 +50,14 @@ void SetRC_FromSerial() {
       myDriver.S1(tempValue);
       pulseFromSerial = tempValue;
 
+      uint8_t tempIncrease = 20;
+      myDriver.S2(tempValue + (tempIncrease*1));
+      myDriver.S3(tempValue + (tempIncrease*2));
+      myDriver.S4(tempValue + (tempIncrease*3));
+      myDriver.S5(tempValue + (tempIncrease*4));
+      myDriver.S6(tempValue + (tempIncrease*5));
+      myDriver.S7(tempValue + (tempIncrease*6));
+
     }else if(tempValue == 3001){
       pulseMin = pulseFromSerial;
       Serial.println("Set " + String(pulseFromSerial) + " us to PulseMin");
